@@ -1,3 +1,6 @@
+![Uploading BDComplete.png…]()
+![Uploading tableZone.png…]()
+
 <img width="406" alt="Authentification" src="https://github.com/aichaoukdour/PharmacieLocationProject/assets/147880095/3632689a-7797-4bfb-9ffe-7a6e626ab56d">
 <img width="644" alt="CasaVilleAjoute" src="https://github.com/aichaoukdour/PharmacieLocationProject/assets/147880095/e4fcd013-5fa8-4e6e-8546-f8f54443489a">
 <img width="644" alt="chercherPharmacieGarde" src="https://github.com/aichaoukdour/PharmacieLocationProject/assets/147880095/f584ea8d-d026-4f3c-98e7-045d5f93e09c">
