@@ -1,0 +1,43 @@
+version: '3'
+services:
+  mysql:
+    image: mysql:latest
+    environment:
+      MYSQL_ROOT_PASSWORD: 
+      MYSQL_DATABASE: pharmacielocation2
+    ports:
+      - "3308:3307"
+
+  backend:
+    build:
+      context: ./pharma-1
+    ports:
+      - "8085:8086"
+    depends_on:
+      - mysql
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3308/pharmacielocation2
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: 
+    healthcheck:
+      test: "/usr/bin/mysql --user=root --password= --execute \"SHOW DATABASES;\""
+      interval: 5s
+      timeout: 2s
+      retries: 100
+
+  frontend:
+    build:
+      context: ./client1
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    environment:
+      PMA_HOST: mysql
+      PMA_PORT: 3308
+      MYSQL_ROOT_PASSWORD: 
+    ports:
+      - "8081:80"
